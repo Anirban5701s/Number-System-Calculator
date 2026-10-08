@@ -1,28 +1,25 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
 
 int main(){
-    int bin;
+    string bin;
     cout<<"Enter Binary Number: ";
     cin>>bin;
-    int n=bin;
+
     int dec=0;
+    int power=1;
     bool valid=true;
 
-    for(int i=0;n>0;i++){
-        int a=n%10;
-
-        if(a>1){
+    for(int i=bin.length()-1;i>=0;i--){
+        if(bin[i]!='0' && bin[i]!='1'){
             valid=false;
-            break;
         }
 
-        dec += (a*int(pow(2,i)));
-        n/=10;
+        dec+=((bin[i]-'0')*power);
+        power*=2;
     }
 
-    if(valid==true){
+    if(valid){
         cout<<dec;
     }else{
         cout<<"Invalid Binary Number";
