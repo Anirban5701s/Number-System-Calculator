@@ -5,20 +5,20 @@ A C++ project for converting and working with numbers in different number system
 ## Current Features
 
 - Binary to Decimal conversion
-- Conversion from any base (2–36) to Decimal
+- Conversion from any base (2–36) to Decimal for positive integers
+- Conversion from Decimal to any base (2–36) for positive and negative integers, including zero
 - Supports digits `0–9` and letters `A–Z`
-- Supports both uppercase and lowercase letters
-- Validates the input according to the selected base
+- Case-insensitive input for any base to Decimal conversion
+- Validates input according to the selected base
 
 ## Planned Features
 
-- Decimal to any base (2–36)
 - Number comparison
 - Addition
 - Subtraction
 - Multiplication
 - Division
-- Fraction Support
+- Fraction support
 
 ## Technologies
 
@@ -37,7 +37,7 @@ building a functional number-system calculator.
 
 - [x] Binary to Decimal
 - [x] Generalized conversion from bases 2–36 to Decimal
-- [ ] Decimal to bases 2–36
+- [x] Decimal to bases 2–36
 - [ ] Number comparison
 - [ ] Arithmetic operations
 - [ ] Fraction support
