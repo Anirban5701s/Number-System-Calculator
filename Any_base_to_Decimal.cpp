@@ -11,37 +11,49 @@ int main(){
         string bin;
         cout<<"Enter Number: ";
         cin>>bin;
-        int dec=0;
-        int power =1;
+        string temp=bin;
+        long  long int dec=0;
+        long long int power =1;
         bool valid=true;
-        for(int i=bin.length()-1;i>=0;i--){
-            bin[i]=toupper(bin[i]);
-            if(bin[i]-'0'>=0 && bin[i]-'0'<=9){
-                if(bin[i]-'0'>=base){
-                    valid=false;
-                    break;
-                }
-            }else if(bin[i]-'A'+10>=10 && bin[i]-'A'+10<=35){
-                if(bin[i]-'A'+10>=base){
-                    valid=false;
-                    break;
-                }
-            }else{
-                valid=false;
-                break;
-            }
-            if(bin[i]-'0' >=0 && bin[i]-'0'<=9){
-                dec+=((bin[i]-'0')*power);
-                power*=base;
-            }else if(bin[i]-'A'>=0 && bin[i]-'A'<=25){
-                dec+=(bin[i]-'A'+10)*power;
-                power*=base;
-            }
+        if(!temp.empty() && (temp[0]=='+' || temp[0]=='-')){
+            temp.erase(0,1);
         }
-        if(valid==true){
-            cout<<dec;
-        }else{
+        if  (temp.empty()){
             cout<<"Invalid Number";
+        }
+        else{
+            for(int i=temp.length()-1;i>=0;i--){
+                temp[i]=toupper(temp[i]);
+                if(temp[i]-'0'>=0 && temp[i]-'0'<=9){
+                    if(temp[i]-'0'>=base){
+                        valid=false;
+                        break;
+                    }
+                }else if(temp[i]-'A'+10>=10 && temp[i]-'A'+10<=35){
+                    if(temp[i]-'A'+10>=base){
+                        valid=false;
+                        break;
+                    }
+                }else{
+                    valid=false;
+                    break;
+                }
+                if(temp[i]-'0' >=0 && temp[i]-'0'<=9){
+                    dec+=((temp[i]-'0')*power);
+                    power*=base;
+                }else if(temp[i]-'A'>=0 && temp[i]-'A'<=25){
+                    dec+=(temp[i]-'A'+10)*power;
+                    power*=base;
+                }
+            }
+            if(bin[0]=='-'){
+                dec=-dec;
+            }
+            if(valid==true){
+                cout<<dec;
+            }else{
+                cout<<"Invalid Number";
+            }
         }
     }
     return 0;
