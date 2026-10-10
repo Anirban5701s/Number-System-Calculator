@@ -5,7 +5,7 @@ A C++ project for converting and working with numbers in different number system
 ## Current Features
 
 - Binary to Decimal conversion
-- Conversion from any base (2–36) to Decimal for positive integers
+- Conversion from any base (2–36) to Decimal for positive and negative integers, including zero 
 - Conversion from Decimal to any base (2–36) for positive and negative integers, including zero
 - Supports digits `0–9` and letters `A–Z`
 - Case-insensitive input for any base to Decimal conversion
